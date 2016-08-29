@@ -44,7 +44,7 @@ module.exports = {
   treeForApp: function(tree) {
     var svgs = mergeTrees(this.svgPaths().filter(function(path) {
       return fs.existsSync(path);
-    }));
+    }), { overwrite: true });
 
     svgs = new Funnel(svgs, {
       include: [new RegExp(/\.svg$/)]
